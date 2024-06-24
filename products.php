@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<?php include 'header.php' ?>
 <div class = "ProductBar">
 <div class="Product">
     <p> Product 1</p>
@@ -26,8 +27,6 @@
 <div class="Product">
     <p> Product 4</p>
     <img src="images/product.jpg" alt="Product1" class="Product1">
-</div>
-
 </div>
 </body>
 
