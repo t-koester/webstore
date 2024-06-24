@@ -14,7 +14,7 @@
 <div class = "ProductBar">
 <div class="Product">
     <p> Product 1</p>
-    <img src="images/product.jpg" alt="Product1" class="Product1">
+    <img src="images/product.jpg" alt="Product1" class="Product1" >
 </div>
 <div class="Product">
     <p> Product 2</p>
@@ -28,6 +28,10 @@
     <p> Product 4</p>
     <img src="images/product.jpg" alt="Product1" class="Product1">
 </div>
+<div class="button-container1">
+        <a href="index.php"></a>
+        <button class="button" onclick="window.location.href = 'index.php';" >Zurück</button>
+        </a>
 </body>
 
 </html> 
