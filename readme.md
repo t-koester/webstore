@@ -3,7 +3,7 @@ I try to make it for future Project and for Private use.
 
 To Do:
 - Get the Order Mechanism Done 
-- Get The Pages dONE
+- Get The Pages done
 - Get the Menue Working 
 
 Yeah thats it.
