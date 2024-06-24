@@ -20,7 +20,7 @@ header {
 header h1 {
     font-family: "Playwrite SK", cursive;
     font-size: 2em;
-    margin: 0; /* Entfernt den Standardabstand des h1-Tags */
+    margin: 0; 
 }
 
 main {
@@ -39,9 +39,8 @@ main {
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
-    margin-bottom: 20px; /* Abstand nach unten */
+    margin-bottom: 20px; 
 }
-
 .content-box {
     background-color: #f0f0f0;
     padding: 20px;
@@ -82,4 +81,13 @@ main {
 
 .button:hover {
     background-color: #0056b3;
+}
+
+.ProductBar {
+ display: flex; 
+ flex-wrap: wrap;
+}
+
+.Product {
+    width: 25%;
 }
