@@ -1,16 +1,9 @@
 This is just a littel Project where i try to build a webstore.
+I try to make it for future Project and for Private use.
 
 To Do:
-- Basic structure in simple HTML
-- Menu for navigation
-- Product page with placeholder
-- Imprint page in simple HTML
-- Contact page in simple HTML
-- FAQ page in simple HTML
-- CSS for the homepage
-- CSS for the product page
-- CSS for the imprint 
-- CSS for the contact
-- PHP form for ordering
+- Get the Order Mechanism Done 
+- Get The Pages dONE
+- Get the Menue Working 
 
 Yeah thats it.
