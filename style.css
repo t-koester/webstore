@@ -1,8 +1,8 @@
 /* style.css */
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif; 
+    margin: 0;
 }
 
 header {
@@ -15,6 +15,10 @@ header {
 .header .logo {
     width: 100px;
     height: auto;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -24,11 +28,62 @@ header h1 {
 
 main {
     display: flex;
-    justify-content: center; 
+    flex-direction: column; 
     align-items: center; 
-    height: calc(100vh - 150px); 
+    justify-content: center; 
+    min-height: 100vh;/
+
+.Head1 {
+    color: #2209af;
+    font-family: "Playwrite ES Deco", cursive;
+    font-optical-sizing: auto;
+    font-size: 40px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border-radius: 20px;
 }
 
-.FAQ {
-    color: #6e6e6e;
+.content-box {
+    background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        margin-top: 10px; 
+        text-align: center;
+    }
+
+.subtitle {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 1px;
+    font-family: "Playwrite ES Deco", cursive;
+    font-optical-sizing: auto;
+}
+
+.Text1 {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 100;
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.button:hover {
+    background-color: #0056b3; 
 }
