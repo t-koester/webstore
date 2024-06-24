@@ -79,35 +79,32 @@ main {
 }
 
 .ProductBar {
- display: flex; 
- flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust as needed */
 }
 
 .Product {
-    width: 25%;
-}
-
-.Product {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 10px;
-    font-family: "Playwrite SK", cursive;
-}
-
-.ProductBar {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    margin-top: 20px;
+    width: 22%; /* Adjust width to fit 4 products per row */
+    margin-bottom: 20px;
     text-align: center;
-    margin: auto;
+    border: 2px solid #ccc; /* Adding a frame */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the frame */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.Product img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Rounded corners for images */
 }
 
 .button-container1 {
     margin-top: 20px;
     text-align: center;
-    margin: auto;
 }
