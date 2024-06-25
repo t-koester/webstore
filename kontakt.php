@@ -23,5 +23,8 @@
         <h2>Website:</h2>
         <p><a href="http://www.lorenipsum.de" target="_blank">www.lorenipsum.de</a></p>
     </div>
+    <div class="button-container1">
+        <button class="button" onclick="window.location.href = 'http://localhost:8000/index.php';">Home</button>
+    </div>
 </body>
 </html>

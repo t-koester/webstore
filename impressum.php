@@ -55,5 +55,8 @@
             </p>
         </div>
     </main>
+    <div class="button-container1">
+        <button class="button" onclick="window.location.href = 'http://localhost:8000/index.php';">Home</button>
+    </div>
 </body>
 </html>
