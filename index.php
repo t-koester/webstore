@@ -37,5 +37,7 @@
       counter++;
     }
   }, 5);
+</script>
 
+</body>
 </html>
