@@ -2,9 +2,13 @@ This is just a littel Project where i try to build a webstore.
 I try to make it for future Project and for Private use.
 
 To Do:
-- Get the Order Mechanism done 
-- Get The Pages done
-- Get the Menue Working 
+- Add the Order Mechanism done 
+- Add Some Elements to interact with
+- Add a News Site 
+- Setup a DB
+- Add a Newsletter Sign Up
+- ~~Add The Pages done~~
+- ~~Add the menu Working~~ 
 
 Links used from this Project:
 - https://seetruetechnology.com/product/simple-placeholder-product-3/
