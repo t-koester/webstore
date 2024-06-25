@@ -6,4 +6,9 @@ To Do:
 - Get The Pages done
 - Get the Menue Working 
 
+Links used from this Project:
+https://seetruetechnology.com/product/simple-placeholder-product-3/
+https://www.freepik.com/premium-vector/logo-lorem-ipsum-slogan-design-art-template_28405409.htm
+https://ibb.co/
+
 Yeah thats it.
