@@ -7,8 +7,8 @@ To Do:
 - Add a News Site 
 - Setup a DB
 - Add a Newsletter Sign Up
-- ~~Add The imporatnt Pages ~~
-- ~~Add the menu ~~ 
+- ~~Add The imporatnt Pages~~
+- ~~Add the menu~~ 
 
 Links used from this Project:
 - https://seetruetechnology.com/product/simple-placeholder-product-3/
