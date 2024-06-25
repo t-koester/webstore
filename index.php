@@ -1,5 +1,3 @@
-<?php $var = 15; ?>
-
 <!DOCTYPE html>
 <html lang="de">
 <?php include 'head.php' ?>

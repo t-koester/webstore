@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php include 'header.php' ?>
+    <?php include 'head.php' ?>
 
     <div class="ProductBar">
         <div class="Product">
