@@ -96,7 +96,7 @@ main {
     justify-content: center;
     align-items: center;
     transition: transform 0.2s; /* add a transition effect */
-      
+    background-color: #f7f7f7; /* grey background */
 }
 
 .Product:hover {
@@ -327,3 +327,11 @@ css
     text-align: center; /* center the text horizontally */
   
   }
+
+  body {
+  background-image: url('images/castle.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+}

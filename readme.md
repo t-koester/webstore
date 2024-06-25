@@ -13,7 +13,7 @@ This Code Include right now:
 To Do:
 - Add the Order Mechanism  
 - ~~Add Some Elements to interact with~~
-- Add a News Site 
+- ~~Add a News Site~~ 
 - Setup a DB
 - Add a Newsletter Sign Up
 - ~~Add The imporatnt Pages~~
@@ -23,5 +23,6 @@ Links used in this Project:
 - https://seetruetechnology.com/product/simple-placeholder-product-3/
 - https://www.freepik.com/premium-vector/logo-lorem-ipsum-slogan-design-art-template_28405409.htm
 - https://ibb.co/
+- https://pixabay.com/de/photos/schloss-palast-geb%C3%A4ude-architektur-467116/ 
 
 Yeah thats it.
