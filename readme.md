@@ -27,3 +27,9 @@ Links used in this Project:
 - https://pixabay.com/de/photos/schloss-palast-geb%C3%A4ude-architektur-467116/ 
 
 Yeah thats it.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](licence.md) file for details.
+
+## Attribution
+If you use any part of this code, you must give credit to the original author T. Köster.

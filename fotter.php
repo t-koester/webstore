@@ -4,5 +4,6 @@
         <a href="impressum.php">Impressum</a>
         <a href="kontakt.php">Kontakt</a>
     </div>
-    <p class="footer-copyright">Copyright 2024 © </p>
+    <p class="footer-copyright">© 2024 Tammo Köster. All rights reserved.
+    </p>
 </footer>
