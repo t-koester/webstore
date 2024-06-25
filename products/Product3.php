@@ -26,6 +26,9 @@
         <button class="button1" onclick="window.location.href = 'PLACEHOLDER';" >Jetzt Kaufen!</button>
             </div>
             </div>
+            <div class="button-container1">
+        <button class="button" onclick="window.location.href = 'http://localhost:8000/index.php';">Zurück</button>
+    </div>
         </div>
     </main>
 </body>
