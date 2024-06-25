@@ -335,3 +335,33 @@ css
   height: 100vh;
   margin: 0;
 }
+
+input[type="email"], input[type="text"] {
+    padding: 10px;
+    margin-bottom: 20px
+
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+
+}
+
+
+#response {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666;
+
+}

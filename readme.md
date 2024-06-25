@@ -2,13 +2,14 @@ This is just a littel Project where i try to build a webstore.
 I try to make it for future Project and for Private use.
 
 This Code Include right now:
-- JS Costumer Counter
+- JS Costumer Counter (Not working pretty well)
 - Menu to select Sites 
 - Product Page 
 - Impressum Page
 - Kontakt Page 
 - News Page 
 - Hover Effect for Products 
+- Newsletter working over MongoDB (BROKEN) 
 
 To Do:
 - Add the Order Mechanism  

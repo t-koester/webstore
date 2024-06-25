@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <?php include 'head.php' ?>
-<body>
+<body> 
     <?php include 'header.php' ?>
 <main>
     <div class="content-box">
