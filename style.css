@@ -95,6 +95,16 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: transform 0.2s; /* add a transition effect */
+      
+}
+
+.Product:hover {
+
+  transform: scale(1.1); /* increase the size by 10% */
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow effect */
+
 }
 
 .Product img {
