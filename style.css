@@ -288,3 +288,32 @@ css
     font-weight: 100;
     justify-content: bottom;
 }
+
+.counter-box {
+    background-color: #fff; /* white background */
+    border: 1px solid #ddd; /* light gray border */
+    padding: 10px 20px; /* some padding */
+    border-radius: 10px; /* rounded corners */
+    display: inline-block; /* make it an inline block */
+    font-size: 24px; /* larger font size */
+    font-weight: bold; /* bold font */
+    text-align: center; /* center the text */
+    display: flex; /* add this to make the container a flex container */
+    flex-direction: column; /* stack elements vertically */
+  
+  }
+  
+  
+  .counter {
+    font-size: 36px; /* even larger font size for the counter */
+    color: #1ec039;
+  
+  }    
+  
+  .label-costumers {
+    font-size: 18px; /* smaller font size for the label */
+    color: #666; /* gray color for the label */
+    font-family: "IBM Plex Mono", monospace;
+    text-align: center; /* center the text horizontally */
+  
+  }

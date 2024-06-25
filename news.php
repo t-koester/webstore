@@ -22,6 +22,10 @@
   <p class="TextNews1">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam</p>
 </div>
 
+<div class="button-container1">
+        <button class="button" onclick="window.location.href = 'http://localhost:8000/index.php';">Home</button>
+    </div>
+    
     <?php include 'fotter.php' ?>
 
 </body>

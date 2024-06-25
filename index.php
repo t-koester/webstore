@@ -12,8 +12,31 @@
         <a href="products.html"></a>
         <button class="button" onclick="window.location.href = 'products.php';" >Zum Shop</button>
     </a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="counter-box">
+  <span class="counter">0</span>
+  <span class="label-costumers">Happy Customers</span>
+</div>
     </div>
     <?php include 'fotter.php' ?>
 
+    <script>
+  let counter = 0;
+  const counterElement = document.querySelector('.counter');
+
+  setInterval(() => {
+    counterElement.textContent = counter;
+    if (counter < 999) {
+      counter++;
+    }
+  }, 5);
+</script>
 </body>
 </html>
