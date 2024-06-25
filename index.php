@@ -15,5 +15,7 @@
         <button class="button" onclick="window.location.href = 'products.php';" >Zum Shop</button>
     </a>
     </div>
+    <?php include 'fotter.php' ?>
+
 </body>
 </html>

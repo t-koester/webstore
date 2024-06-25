@@ -33,5 +33,6 @@
             </div>
         </div>
     </main>
+    <?php include 'fotter.php' ?>
 </body>
 </html>

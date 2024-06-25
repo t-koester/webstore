@@ -30,6 +30,7 @@
         <button class="button" onclick="window.location.href = 'http://localhost:8000/index.php';">Zurück</button>
     </div>
         </div>
+        <?php include 'fotter.php' ?>
     </main>
 </body>
 </html>
