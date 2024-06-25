@@ -1,7 +1,7 @@
 This is just a littel Project where i try to build a webstore.
 I try to make it for future Project and for Private use.
 
-This Code Include right now:
+## his Code Include right now:
 - JS Costumer Counter (Not working pretty well)
 - Menu to select Sites 
 - Product Page 
@@ -11,7 +11,7 @@ This Code Include right now:
 - Hover Effect for Products 
 - Newsletter working over MongoDB (BROKEN) 
 
-To Do:
+## To Do:
 - Add the Order Mechanism  
 - ~~Add Some Elements to interact with~~
 - ~~Add a News Site~~ 
@@ -20,7 +20,7 @@ To Do:
 - ~~Add The imporatnt Pages~~
 - ~~Add the menu~~ 
 
-Links used in this Project:
+## Links used in this Project:
 - https://seetruetechnology.com/product/simple-placeholder-product-3/
 - https://www.freepik.com/premium-vector/logo-lorem-ipsum-slogan-design-art-template_28405409.htm
 - https://ibb.co/
