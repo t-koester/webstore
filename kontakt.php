@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Kontakt</h1>
-    </header>
-    <main>
-        <div class="content-box">
-            <p>Contact form or contact details.</p>
-        </div>
-    </main>
-    <footer>
-        <img src="images/logo.jpg" alt="Logo" class="footer-logo">
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="impressum.html">Impressum</a>
-        </div>
-    </footer>
+    <div class="company-info">
+        <h2>Firma:</h2>
+        <p>Loren Ipsum GmbH</p>
+
+        <h2>Adresse:</h2>
+        <p>Musterstraße 123,<br>12345 Musterstadt</p>
+
+        <h2>Telefon:</h2>
+        <p>+49 (0)123 456789</p>
+
+        <h2>E-Mail:</h2>
+        <p><a href="mailto:info@lorenipsum.de">info@lorenipsum.de</a></p>
+
+        <h2>Website:</h2>
+        <p><a href="http://www.lorenipsum.de" target="_blank">www.lorenipsum.de</a></p>
+    </div>
 </body>
 </html>
