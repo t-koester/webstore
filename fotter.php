@@ -4,5 +4,5 @@
         <a href="impressum.php">Impressum</a>
         <a href="kontakt.php">Kontakt</a>
     </div>
-    <p class="footer-copyright">Copyright 2023 / 2024</p>
+    <p class="footer-copyright">Copyright 2024 © </p>
 </footer>

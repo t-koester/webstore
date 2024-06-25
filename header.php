@@ -7,7 +7,7 @@
   <a href="http://localhost:8000/index.php">Home</a>
   <a href="http://localhost:8000/products.php">Shop</a>
   <a href="http://localhost:8000/kontakt.php">Kontakt</a>
-  <a href="http://localhost:8000/PLACEHOLDER">News</a>
+  <a href="http://localhost:8000/news.php">News</a>
   <a href="http://localhost:8000/impressum.php">Impressum</a>
 </div> 
 </header>

@@ -255,3 +255,36 @@ footer {
     background-color: #ddd;
     color: black;
 }
+
+.content-box-news1  {  
+background-color: #f0f0f0;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+width: 80%;
+margin-top: 20px;
+text-align: center;
+display: flex;
+justify-content: center;
+margin: 20px auto;
+}
+
+css
+.subtitle {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #fff; /* add a white background */
+  padding: 5px 10px; /* add some padding around the text */
+  border: 1px solid #ddd; /* add a light gray border */
+  border-radius: 5px; /* add a slight rounded corner */
+}
+
+.TextNews1 {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 100;
+    justify-content: bottom;
+}
