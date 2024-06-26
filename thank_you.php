@@ -12,6 +12,5 @@
 <p class="Order_Text_2">Bitte Überweise das Geld mit deinem Namen als Verwendungszweck! <br><br> Name: Max Mustermann<br>
 IBAN: DE89370400440532013000</p>
 </div>
-    <?php include 'footer.php';?>
 </body>
 <?php include 'fotter.php' ?>
