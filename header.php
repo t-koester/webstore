@@ -10,5 +10,7 @@
   <a href="http://localhost:8000/news.php">News</a>
   <a href="http://localhost:8000/impressum.php">Impressum</a>
   <a href="http://localhost:8000/newsletter.php">Newsletter</a>
+  <a href="http://localhost:8000/faq.php">FAQ</a>
+
 </div> 
 </header>

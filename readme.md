@@ -11,6 +11,7 @@ I try to make it for future Project and for Private use.
 - Hover Effect for Products 
 - Newsletter working over MongoDB (BROKEN) 
 - Order Mechanism via PHP Form and json DB
+- FAQ Page 
 
 ## To Do:
 - ~~Add the Order Mechanism~~  
