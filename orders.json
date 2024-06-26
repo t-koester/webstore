@@ -7,5 +7,14 @@
         "product": "Product A",
         "quantity": "1",
         "special_instructions": "Klappt"
+    },
+    {
+        "customer_name": "test3",
+        "email": "test3@gmail.com",
+        "phone_number": "123",
+        "address": "test3",
+        "product": "Product A",
+        "quantity": "1",
+        "special_instructions": ""
     }
 ]
