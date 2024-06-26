@@ -8,8 +8,20 @@
   $quantity = $_POST['quantity'];
   $special_instructions = $_POST['special_instructions'];
 
+  // Get the existing data from the JSON file
+  $json_file = 'orders.json';
+  if (file_exists($json_file)) {
+    $existing_data = json_decode(file_get_contents($json_file), true);
+  } else {
+    $existing_data = array();
+  }
+
+  // Generate a unique order number
+  $order_number = count($existing_data) + 1;
+
   // Create an array to store the form data
   $data = array(
+    'order_number' => $order_number,
     'customer_name' => $customer_name,
     'email' => $email,
     'phone_number' => $phone_number,
@@ -19,14 +31,6 @@
     'special_instructions' => $special_instructions
   );
 
-  // Get the existing data from the JSON file
-  $json_file = 'orders.json';
-  if (file_exists($json_file)) {
-    $existing_data = json_decode(file_get_contents($json_file), true);
-  } else {
-    $existing_data = array();
-  }
-
   // Add the new data to the existing data
   $existing_data[] = $data;
 
@@ -35,6 +39,6 @@
   file_put_contents($json_file, $json_data);
 
   // Redirect to a thank-you page
-  header("Location: thank_you.php");
+  header("Location: thank_you.php?order_number=$order_number");
   exit();
 ?>

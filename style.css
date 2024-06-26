@@ -419,3 +419,37 @@ form {
   background-color: #0056b3;
   
   }
+
+  .order_placed {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+ 
+.Order_Text_1 {
+ font-family: "Playwrite ES Deco", cursive;
+ font-size: 25px;
+ }
+
+ .Order_Text_2 {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}

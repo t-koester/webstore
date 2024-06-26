@@ -10,6 +10,7 @@ I try to make it for future Project and for Private use.
 - News Page 
 - Hover Effect for Products 
 - Newsletter working over MongoDB (BROKEN) 
+- Order Mechanism via PHP Form and json DB
 
 ## To Do:
 - ~~Add the Order Mechanism~~  
@@ -21,10 +22,11 @@ I try to make it for future Project and for Private use.
 - ~~Add the menu~~ 
 
 ## Links used in this Project:
-- https://seetruetechnology.com/product/simple-placeholder-product-3/
-- https://www.freepik.com/premium-vector/logo-lorem-ipsum-slogan-design-art-template_28405409.htm
-- https://ibb.co/
-- https://pixabay.com/de/photos/schloss-palast-geb%C3%A4ude-architektur-467116/ 
+- https://seetruetechnology.com/product/simple-placeholder-product-3/ (Product Placeholder)
+- https://www.freepik.com/premium-vector/logo-lorem-ipsum-slogan-design-art-template_28405409.htm (Logo)
+- https://ibb.co/ (Host images)
+- https://pixabay.com/de/photos/schloss-palast-geb%C3%A4ude-architektur-467116/ (Backgrond)
+- https://www.w3schools.com/php/php_form_complete.asp (Form Base)
 
 Yeah thats it.
 
