@@ -513,3 +513,32 @@ form {
 .faq_header {
     text-align: center;
 }
+
+.abt_us-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 40px);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+.abt_us-titel {
+    font-family: "Playwrite ES Deco", cursive;
+    font-size: 25px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    width: calc(33.33% - 40px);
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    }
