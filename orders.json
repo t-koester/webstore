@@ -1,0 +1,11 @@
+[
+    {
+        "customer_name": "Test2",
+        "email": "test2@test.de",
+        "phone_number": "123456789",
+        "address": "Test2",
+        "product": "Product A",
+        "quantity": "1",
+        "special_instructions": "Klappt"
+    }
+]
