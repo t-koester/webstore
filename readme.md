@@ -12,7 +12,7 @@ I try to make it for future Project and for Private use.
 - Newsletter working over MongoDB (BROKEN) 
 
 ## To Do:
-- Add the Order Mechanism  
+- ~~Add the Order Mechanism~~  
 - ~~Add Some Elements to interact with~~
 - ~~Add a News Site~~ 
 - Setup a DB
