@@ -16,11 +16,11 @@ I try to make it for future Project and for Private use.
 - Auto Select Product in Product Form
 
 ## To Do:
+- Setup a DB
+- Add a Newsletter Sign Up
 - ~~Add the Order Mechanism~~  
 - ~~Add Some Elements to interact with~~
 - ~~Add a News Site~~ 
-- Setup a DB
-- Add a Newsletter Sign Up
 - ~~Add The imporatnt Pages~~
 - ~~Add the menu~~ 
 
