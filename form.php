@@ -1,11 +1,6 @@
 <?php include 'head.php' ?>
 <?php include 'header.php' ?>
 <?php
-$welcome = "Hallo";
-if (isset ($_POST["peter"])) {
-  $welcome .= " ". $_POST[ "peter"];
-}
-echo $welcome;
 
 $product_selected = 'Product A'; // default product
 if (isset($_GET['product1'])) {

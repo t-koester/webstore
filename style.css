@@ -28,14 +28,54 @@ main {
 }
 
 .Head1 {
-    font-family: "Playwrite SK", cursive;
-    font-size: 40px;
-    background-color: #f0f0f0;
+    background-color: #333; /* same as before */
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    margin-bottom: 20px; 
-}
+    text-align: center;
+    color: #fff; /* text color */
+  }
+  
+  .Head1.logo {
+    width: 20%; /* logo width will be 20% of the parent container */
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .Head1 h1 {
+    font-size: 24px; /* default font size */
+  }
+  
+  /* Media queries for different screen sizes */
+  
+  /* Large screens (desktops) */
+  @media only screen and (min-width: 1200px) {
+   .Head1 h1 {
+      font-size: 36px;
+    }
+   .Head1.logo {
+      width: 150px; /* logo width will be 150px on large screens */
+    }
+  }
+  
+  /* Medium screens (tablets) */
+  @media only screen and (min-width: 768px) and (max-width: 1199px) {
+   .Head1 h1 {
+      font-size: 28px;
+    }
+   .Head1.logo {
+      width: 120px; /* logo width will be 120px on medium screens */
+    }
+  }
+  
+  /* Small screens (mobiles) */
+  @media only screen and (max-width: 767px) {
+   .Head1 h1 {
+      font-size: 20px;
+    }
+   .Head1.logo {
+      width: 80px; /* logo width will be 80px on small screens */
+    }
+  }
+
 .content-box {
     background-color: #f0f0f0;
     padding: 20px;
@@ -78,10 +118,36 @@ main {
     background-color: #0056b3;
 }
 
+
 .ProductBar {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Adjust as needed */
+    justify-content: center;
+    margin: 40px auto;
+  
+  }
+  
+  
+  .Product {
+    width: 25%; /* default width */
+    margin: 20px;
+    text-align: center;
+  
+  }
+  
+  
+  .Product img {
+    width: 100%;
+    height: 150px; /* default height */
+    object-fit: cover;
+    border-radius: 10px;
+  
+  }
+  
+  
+  .Product p { 
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .Product {
@@ -115,9 +181,26 @@ main {
 }
 
 .button-container1 {
-    margin-top: 20px;
     text-align: center;
-}
+    margin: 40px auto;
+  
+  }
+  
+  
+  .button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  
+  }
+  
+  
+  .button:hover {
+    background-color: #555;
+  }
 
 .product-image {
     width: 100%;
@@ -172,46 +255,82 @@ main {
     
 }
 
-
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333; /* same as before */
+  padding: 20px;
+  text-align: center;
+  color: #fff; /* text color */
 }
 
-.footer-logo {
-    width: 50px;
-    height: auto;
-    margin-bottom: 10px;
+footer .footer-logo {
+  width: 20%; /* logo width will be 20% of the parent container */
+  height: auto;
+  margin: 0 auto;
 }
 
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+footer .footer-links {
+  margin-top: 10px;
 }
 
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1em;
+footer .footer-links a {
+  margin: 0 10px;
+  color: #fff; /* link color */
+  text-decoration: none;
 }
 
-.footer-links a:hover {
-    text-decoration: underline;
+footer .footer-links a:hover {
+  color: #ccc; /* link hover color */
 }
 
-.footer-copyright {
-    color: #fff;
+footer .footer-copyright {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #fff; /* copyright color */
+}
+
+/* Media queries for different screen sizes */
+
+/* Large screens (desktops) */
+@media only screen and (min-width: 1200px) {
+  footer .footer-logo {
+    width: 150px; /* logo width will be 150px on large screens */
+  }
+  footer .footer-links a {
+    font-size: 18px;
+  }
+  footer .footer-copyright {
     font-size: 14px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media only screen and (max-width: 1199px) and (min-width: 768px) {
+  footer .footer-logo {
+    width: 120px; /* logo width will be 120px on medium screens */
+  }
+  footer .footer-links a {
+    font-size: 16px;
+  }
+  footer .footer-copyright {
+    font-size: 12px;
+  }
+}
+
+/* Small screens (mobiles) */
+@media only screen and (max-width: 767px) {
+  footer .footer-logo {
+    width: 80px; /* logo width will be 80px on small screens */
+  }
+  footer .footer-links a {
+    font-size: 14px;
+  }
+  footer .footer-copyright {
+    font-size: 10px;
+  }
 }
 
 .impressum-container {

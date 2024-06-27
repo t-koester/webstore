@@ -13,6 +13,7 @@ I try to make it for future Project and for Private use.
 - Order Mechanism via PHP Form and json DB
 - FAQ Page 
 - About US Page 
+- Auto Select Product in Product Form
 
 ## To Do:
 - ~~Add the Order Mechanism~~  
