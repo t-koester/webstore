@@ -8,37 +8,47 @@
   $quantity = $_POST['quantity'];
   $special_instructions = $_POST['special_instructions'];
 
-  // Get the existing data from the JSON file
-  $json_file = 'orders.json';
-  if (file_exists($json_file)) {
-    $existing_data = json_decode(file_get_contents($json_file), true);
-  } else {
-    $existing_data = array();
-  }
+  // Connect to MongoDB
+  $mongo_client = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 
-  // Generate a unique order number
-  $order_number = count($existing_data) + 1;
+  // Select the database and collection
+  $database = new MongoDB\Driver\Database($mongo_client, "mydatabase");
+  $collection = new MongoDB\Driver\Collection($database, "orders");
 
-  // Create an array to store the form data
-  $data = array(
-    'order_number' => $order_number,
-    'customer_name' => $customer_name,
-    'email' => $email,
-    'phone_number' => $phone_number,
-    'address' => $address,
-    'product' => $product,
-    'quantity' => $quantity,
-    'special_instructions' => $special_instructions
+  // Create a new document to insert into the collection
+  $document = array(
+    "customer_name" => $customer_name,
+    "email" => $email,
+    "phone_number" => $phone_number,
+    "address" => $address,
+    "product" => $product,
+    "quantity" => $quantity,
+    "special_instructions" => $special_instructions
   );
 
-  // Add the new data to the existing data
-  $existing_data[] = $data;
+  // Insert the document into the collection
+  $write_result = $collection->insertOne($document);
 
-  // Encode the data to JSON and save it to the file
-  $json_data = json_encode($existing_data, JSON_PRETTY_PRINT);
-  file_put_contents($json_file, $json_data);
+  // Get the inserted ID
+  $inserted_id = $write_result->getInsertedId();
+
+  // Display the data in a table
+  echo "<h1>Order Summary</h1>";
+  echo "<table>";
+  echo "<tr><th>Order Number</th><th>Customer Name</th><th>Email</th><th>Phone Number</th><th>Address</th><th>Product</th><th>Quantity</th><th>Special Instructions</th></tr>";
+  echo "<tr>";
+  echo "<td>" . $inserted_id . "</td>";
+  echo "<td>" . $customer_name . "</td>";
+  echo "<td>" . $email . "</td>";
+  echo "<td>" . $phone_number . "</td>";
+  echo "<td>" . $address . "</td>";
+  echo "<td>" . $product . "</td>";
+  echo "<td>" . $quantity . "</td>";
+  echo "<td>" . $special_instructions . "</td>";
+  echo "</tr>";
+  echo "</table>";
 
   // Redirect to a thank-you page
-  header("Location: thank_you.php?order_number=$order_number");
+  header("Location: thank_you.php?order_number=$inserted_id");
   exit();
 ?>

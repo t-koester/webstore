@@ -11,6 +11,7 @@
   <a href="http://localhost:8000/impressum.php">Impressum</a>
   <a href="http://localhost:8000/newsletter.php">Newsletter</a>
   <a href="http://localhost:8000/faq.php">FAQ</a>
+  <a href="http://localhost:8000/aboutus.php">About US</a>
 
 </div> 
 </header>

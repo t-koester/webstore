@@ -526,6 +526,8 @@ form {
     justify-content: center;
     margin: 20px auto;
     font-family: "IBM Plex Mono", monospace;
+    width: calc(33.33% - 40px);
+    transition: all 0.3s ease-in-out;
 }
 
 .abt_us-titel {
@@ -541,4 +543,9 @@ form {
     display: flex;
     justify-content: center;
     margin: 20px auto;
+    }
+
+    .abt_us-box {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
     }
