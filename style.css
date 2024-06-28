@@ -668,3 +668,23 @@ form {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         transform: translateY(-5px);
     }
+
+    .social-media {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .social-media a {
+        margin: 0 10px;
+      }
+      
+      .social-media img {
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 50%;
+      }
+      
+      .social-media img:hover {
+        opacity: 0.8;
+      }

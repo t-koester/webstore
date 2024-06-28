@@ -1,54 +1,58 @@
 <?php
-  // Get the form data
-  $customer_name = $_POST['customer_name'];
-  $email = $_POST['email'];
-  $phone_number = $_POST['phone_number'];
-  $address = $_POST['address'];
-  $product = $_POST['product'];
-  $quantity = $_POST['quantity'];
-  $special_instructions = $_POST['special_instructions'];
 
-  // Connect to MongoDB
-  $mongo_client = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+// Configuration
+$db_host = 'localhost';
+$db_username = 'root';
+$db_password = 'root';
+$db_name = 'webstore_project'; // Make sure this matches the actual database name
 
-  // Select the database and collection
-  $database = new MongoDB\Driver\Database($mongo_client, "mydatabase");
-  $collection = new MongoDB\Driver\Collection($database, "orders");
+// Create a new PDO instance
+$pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_username, $db_password);
 
-  // Create a new document to insert into the collection
-  $document = array(
-    "customer_name" => $customer_name,
-    "email" => $email,
-    "phone_number" => $phone_number,
-    "address" => $address,
-    "product" => $product,
-    "quantity" => $quantity,
-    "special_instructions" => $special_instructions
-  );
+// ... rest of the code remains the same ...
 
-  // Insert the document into the collection
-  $write_result = $collection->insertOne($document);
+// Set error mode to exceptions
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  // Get the inserted ID
-  $inserted_id = $write_result->getInsertedId();
+// Check if the database connection is established
+if (!$pdo) {
+  echo 'Error: Unable to connect to database';
+  exit;
+}
 
-  // Display the data in a table
-  echo "<h1>Order Summary</h1>";
-  echo "<table>";
-  echo "<tr><th>Order Number</th><th>Customer Name</th><th>Email</th><th>Phone Number</th><th>Address</th><th>Product</th><th>Quantity</th><th>Special Instructions</th></tr>";
-  echo "<tr>";
-  echo "<td>" . $inserted_id . "</td>";
-  echo "<td>" . $customer_name . "</td>";
-  echo "<td>" . $email . "</td>";
-  echo "<td>" . $phone_number . "</td>";
-  echo "<td>" . $address . "</td>";
-  echo "<td>" . $product . "</td>";
-  echo "<td>" . $quantity . "</td>";
-  echo "<td>" . $special_instructions . "</td>";
-  echo "</tr>";
-  echo "</table>";
+// Get the form data
+$customer_name = $_POST['customer_name'];
+$email = $_POST['email'];
+$phone_number = $_POST['phone_number'];
+$address = $_POST['address'];
+$product = $_POST['product'];
+$quantity = $_POST['quantity'];
+$special_instructions = $_POST['special_instructions'];
 
-  // Redirect to a thank-you page
-  header("Location: thank_you.php?order_number=$inserted_id");
-  exit();
+try {
+  // Prepare the SQL statement
+  $statement = $pdo->prepare("INSERT INTO users (email, vorname, nachname) VALUES (:email, :customer_name, '')");
+  $statement->bindParam(':email', $email);
+  $statement->bindParam(':customer_name', $customer_name);
+  $statement->execute();
+
+  // Get the new user ID
+  $new_id = $pdo->lastInsertId();
+
+  // Prepare the SQL statement for the order
+  $statement = $pdo->prepare("INSERT INTO orders (user_id, product, quantity, address, phone_number, special_instructions) VALUES (:user_id, :product, :quantity, :address, :phone_number, :special_instructions)");
+  $statement->bindParam(':user_id', $new_id);
+  $statement->bindParam(':product', $product);
+  $statement->bindParam(':quantity', $quantity);
+  $statement->bindParam(':address', $address);
+  $statement->bindParam(':phone_number', $phone_number);
+  $statement->bindParam(':special_instructions', $special_instructions);
+  $statement->execute();
+
+  echo 'Order placed successfully!';
+} catch (PDOException $e) {
+  echo 'Error: '. $e->getMessage();
+  exit;
+}
+
 ?>
