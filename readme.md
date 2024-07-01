@@ -10,14 +10,14 @@ I try to make it for future Project and for Private use.
 - News Page 
 - Hover Effect for Products 
 - Newsletter working over MongoDB (BROKEN) 
-- Order Mechanism via PHP Form and json DB
+- Order Mechanism via PHP Form and mysql DB
 - FAQ Page 
 - About US Page 
 - Auto Select Product in Product Form
 
 ## To Do:
-- Setup a DB
 - Add a Newsletter Sign Up
+- ~~Setup a DB~~
 - ~~Add the Order Mechanism~~  
 - ~~Add Some Elements to interact with~~
 - ~~Add a News Site~~ 
