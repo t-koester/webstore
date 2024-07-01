@@ -98,8 +98,8 @@ if (isset($_POST['submit'])) {
     $recipients = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Send newsletter
-    $subject = 'Test Newsletter';
-    $body = '<h1>This is a test newsletter sent to Mailpit</h1>';
+    $subject = 'Newsletter Conformation';
+    $body = '<h1>Confirm your email by answering to this!</h1>';
     sendNewsletter($subject, $body, $recipients);
 }
 
