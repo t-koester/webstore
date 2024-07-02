@@ -53,7 +53,7 @@ $conn->close();
     <?php include 'header.php' ?>
     <?php include 'head.php' ?>
 
-    <div class="ProductBar">
+    <div class="Products">
         <?php foreach($products as $product) { echo $product; } ?>
     </div>
 
