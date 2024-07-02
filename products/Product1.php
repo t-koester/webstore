@@ -23,7 +23,6 @@
             <div class="buy">
             <div class="button-container">
         <a href="products.php"></a>
-        <a href="/form.php?peter=silie"> Kauf Formular</a>
         <button class="button1" onclick="window.location.href = 'http://localhost:8000/form.php?product1';" >Jetzt Kaufen!</button>
             </div>
 

@@ -688,3 +688,46 @@ form {
       .social-media img:hover {
         opacity: 0.8;
       }
+
+      /* Style the form */
+form {
+  max-width: 300px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the labels and inputs */
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="email"], input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Style the error messages */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}

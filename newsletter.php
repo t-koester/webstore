@@ -80,23 +80,12 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $name = $_POST['name'];
 
+}
+ 
     // Validate email address
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo 'Invalid email address';
         exit;
-    }
-
-    // Add subscriber to database
-    $stmt = $db->prepare('INSERT INTO subscribers (email, name) VALUES (:email, :name)');
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':name', $name);
-    $stmt->execute();
-
-    // Get all subscribers from database
-    $stmt = $db->prepare('SELECT email, name FROM subscribers');
-    $stmt->execute();
-    $recipients = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     // Send newsletter
     $subject = 'Newsletter Conformation';
     $body = '<h1>Confirm your email by answering to this!</h1>';
@@ -105,6 +94,9 @@ if (isset($_POST['submit'])) {
 
 // Form to collect email addresses
 ?>
+
+<?php include 'head.php' ?>
+<?php include 'header.php' ?>
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <label for="email">Email:</label>
     <input type="email" name="email" required><br><br>
