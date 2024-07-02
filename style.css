@@ -789,3 +789,12 @@ body {
 .button:hover {
   background-color: #3e8e41;
 }
+
+a {
+  text-decoration: none; /* remove underline */
+  color: inherit; /* inherit the text color from the parent element */
+}
+
+a:hover {
+  cursor: pointer; /* change the cursor to a pointing hand on hover */
+}

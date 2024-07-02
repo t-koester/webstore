@@ -24,12 +24,15 @@ if ($result->num_rows > 0) {
         $product_name = $row["Name"];
         $product_description = $row["Desc"];
         $product_price = $row["Price"];
+        $product_id = $row["ID"]; // assuming you have an ID column in your products table
 
-        $product_html = "<div class='Product'>";
-        $product_html .= "<p>$product_name</p>";
-        $product_html .= "<p>$product_description</p>";
-        $product_html .= "<p>Price: $product_price</p>";
-        $product_html .= "</div>";
+        $product_html = "<a href='product.php?id=$product_id'>"; // link to product.php
+        $product_html.= "<div class='Product'>";
+        $product_html.= "<p>$product_name</p>";
+        $product_html.= "<p>$product_description</p>";
+        $product_html.= "<p>Price: $product_price</p>";
+        $product_html.= "</div>";
+        $product_html.= "</a>"; // close the link tag
 
         $products[] = $product_html;
     }
@@ -50,16 +53,16 @@ $conn->close();
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <?php include 'header.php' ?>
-    <?php include 'head.php' ?>
+    <?php include 'header.php'?>
+    <?php include 'head.php'?>
 
     <div class="Products">
-        <?php foreach($products as $product) { echo $product; } ?>
+        <?php foreach($products as $product) { echo $product; }?>
     </div>
 
     <div class="button-container1">
         <button class="button" onclick="window.location.href = 'index.php';">Zurück</button>
     </div>
-    <?php include 'footer.php' ?>
+    <?php include 'footer.php'?>
 </body>
 </html>
