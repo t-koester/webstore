@@ -1,3 +1,6 @@
+<?php include 'head.php' ?>
+<?php include 'header.php' ?>
+
 <?php
 
 // Configuration
@@ -44,11 +47,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt->bindParam(':amount', $quantity);
   $stmt->execute();
 
-  // Display a success message
-  echo "Order placed successfully! Your order number is: $order_number";
+  // Display a success message with order details
+?>
+<div class='success-message'>
+  <h2 class='success-header'>Order Successful!</h2>
+  <p class='customer-greeting'>Dear <?php echo htmlspecialchars($customer_name); ?>,</p>
+  <p class='order-summary'>Your order has been successfully placed. Please find the details below:</p>
+  <ul class='order-details'>
+    <li class='order-number'>Order Number: <?php echo htmlspecialchars($order_number); ?></li>
+    <li class='product'>Product: <?php echo htmlspecialchars($product); ?></li>
+    <li class='quantity'>Quantity: <?php echo htmlspecialchars($quantity); ?></li>
+    <li class='special-instructions'>Special Instructions: <?php echo htmlspecialchars($special_instructions); ?></li>
+  </ul>
+  <p class='payment-instructions'>Please transfer the payment to: DE38500105173193917541 with the reference number: <?php echo htmlspecialchars($order_number); ?></p>
+  <p class='thank-you'>Thank you for your order!</p>
+</div>
+<?php
+
 } else {
   // Display an error message if the form hasn't been submitted
+  echo "<div class='error-message'>";
   echo "Error: Form not submitted";
+  echo "</div>";
 }
 
 ?>
+
+<?php include 'footer.php' ?>
