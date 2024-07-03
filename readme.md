@@ -14,9 +14,12 @@ I try to make it for future Project and for Private use.
 - FAQ Page 
 - About US Page 
 - Auto Select Product in Product Form
+- Auto Fetch Products from the db
+- Auto Fetch Product Info and Display it on the Info Page
 
 ## To Do:
-- Save Products in the DB and fetch it
+- Fix the Bugs on Display Products 
+- ~~Save Products in the DB and fetch it~~
 - ~~Add a Newsletter Sign Up~~
 - ~~Setup a DB~~
 - ~~Add the Order Mechanism~~  
