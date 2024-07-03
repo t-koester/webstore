@@ -896,17 +896,21 @@ body {
 }
 
 .success-message {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* adjust the width to your liking */
+  margin: 40px auto; /* add some margin and center the box */
+  padding: 20px; /* add some padding to make the box more readable */
+  border: 1px solid #ddd; /* add a border to make the box more visible */
+  border-radius: 10px; /* add some rounded corners to make the box more visually appealing */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add some subtle shadow to make the box more prominent */
+  background-color: white; /* add a grey background color to the box */
 }
 
 .success-header {
   color: #333;
   font-size: 24px;
   margin-bottom: 10px;
+  margin: 0 auto;
+
 }
 
 .customer-greeting {
@@ -923,6 +927,7 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin: 0 auto;
 }
 
 .order-details li {
@@ -937,11 +942,15 @@ body {
 .payment-instructions {
   font-size: 16px;
   margin-bottom: 10px;
+  margin: 0 auto;
+
 }
 
 .thank-you {
   font-size: 18px;
   margin-bottom: 20px;
+  margin: 0 auto;
+
 }
 
 .error-message {
