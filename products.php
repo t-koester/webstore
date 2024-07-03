@@ -26,7 +26,7 @@ if ($result->num_rows > 0) {
         $product_price = $row["Price"];
         $product_id = $row["ID"]; // assuming you have an ID column in your products table
 
-        $product_html = "<a href='product.php?id=$product_id'>"; // link to product.php
+        $product_html = "<a href='productpage.php?name=$product_name'>"; // link to productpage.php with product name
         $product_html.= "<div class='Product'>";
         $product_html.= "<p>$product_name</p>";
         $product_html.= "<p>$product_description</p>";
