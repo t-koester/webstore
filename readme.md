@@ -18,7 +18,8 @@ I try to make it for future Project and for Private use.
 - Auto Fetch Product Info and Display it on the Info Page
 
 ## To Do:
-- Fix the Bugs on Display Products 
+- Add a Payment Method
+- ~~Fix the Bugs on Display Products~~ 
 - ~~Save Products in the DB and fetch it~~
 - ~~Add a Newsletter Sign Up~~
 - ~~Setup a DB~~
