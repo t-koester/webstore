@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <p class='customer-greeting'>Moin <?php echo htmlspecialchars($customer_name); ?>,</p>
   <p class='order-summary'>Deine Bestellung ist bei uns eingegangen. Hier sind deine Bestelldetails:</p>
   <ul class='order-details'>
-    <li class='order-number'Bestellnummer: <?php echo htmlspecialchars($order_number); ?> </li>
+    <li class='order-number'Bestellnummer: <?php echo htmlspecialchars($order_number); ?></li>
     <li class='product'>Produkt: <?php echo htmlspecialchars($product); ?></li>
     <li class='quantity'>Menge: <?php echo htmlspecialchars($quantity); ?></li>
     <li class='special-instructions'>Sonderwünsche: <?php echo htmlspecialchars($special_instructions); ?></li>

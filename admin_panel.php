@@ -13,20 +13,29 @@ if ($conn->connect_error) {
     die("Connection failed: ". $conn->connect_error);
 }
 
+// Start the session
+session_start();
+
 // Login credentials
 $admin_username = 'admin';
 $admin_password = 'password'; // You should store hashed passwords in a secure way
 
-// Check if the login form is submitted
-if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+// Check if the user is already logged in
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+    $logged_in = true;
+} else {
+    // Check if the login form is submitted
+    if (isset($_POST['login'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-    if ($username == $admin_username && $password == $admin_password) {
-        // Login successful, allow access to the admin panel
-        $logged_in = true;
-    } else {
-        $error = "Invalid username or password";
+        if ($username == $admin_username && $password == $admin_password) {
+            // Login successful, set the session variable
+            $_SESSION['logged_in'] = true;
+            $logged_in = true;
+        } else {
+            $error = "Invalid username or password";
+        }
     }
 }
 
@@ -48,6 +57,7 @@ if (!isset($logged_in) || !$logged_in) {
 
 // If logged in, show the admin panel
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,26 +67,99 @@ if (!isset($logged_in) || !$logged_in) {
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="admin-panel">
-    <?php include 'header.php'?>
+    <h1>Admin Panel</h1>
 
-    <div class="container">
-        <h1>Admin Panel</h1>
+    <!-- Create Product Form -->
+    <h2>Create Product</h2>
+    <form id="create-product-form">
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" name="product_name"><br><br>
+        <label for="product_description">Product Description:</label>
+        <textarea id="product_description" name="product_description"></textarea><br><br>
+        <label for="product_price">Product Price:</label>
+        <input type="number" id="product_price" name="product_price"><br><br>
+        <button id="create-product-btn">Create Product</button>
+        <div id="product-create-response"></div>
+    </form>
 
-        <!-- Create Product Form -->
-        <h2>Create Product</h2>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <label for="product_name">Product Name:</label>
-            <input type="text" id="product_name" name="product_name"><br><br>
-            <label for="product_description">Product Description:</label>
-            <textarea id="product_description" name="product_description"></textarea><br><br>
-            <label for="product_price">Product Price:</label>
-            <input type="number" id="product_price" name="product_price"><br><br>
-            <input type="submit" name="create_product" value="Create Product">
-        </form>
+    <!-- Delete Product Form -->
+    <h2>Delete Product</h2>
+    <form id="delete-product-form">
+        <label for="product_name">Select Product:</label>
+        <select id="product_name" name="product_name">
+            <?php
+            $sql = "SELECT Name FROM products";
+            $result = $conn->query($sql);
 
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<option value='".$row["Name"]."'>".$row["Name"]."</option>";
+                }
+            }
+            ?>
+        </select><br><br>
+        <button id="delete-product-btn">Delete Product</button>
+        <div id="product-delete-response"></div>
+    </form>
 
-    </div>
+    <script>
+        const createProductForm = document.getElementById('create-product-form');
+        const createProductBtn = document.getElementById('create-product-btn');
+        const productCreateResponse = document.getElementById('product-create-response');
 
-    <?php include 'footer.php'?>
+        createProductBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent page reload
+
+            if (!<?php echo isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true ? 'true' : 'false'; ?>) {
+                alert("Access denied. You must belogged in to create a product.");
+                return;
+            }
+
+            const productName = document.getElementById('product_name').value;
+            const productDescription = document.getElementById('product_description').value;
+            const productPrice = document.getElementById('product_price').value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'create_product.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(`productName=${productName}&productDescription=${productDescription}&productPrice=${productPrice}`);
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    productCreateResponse.innerHTML = 'Product created successfully!';
+                } else {
+                    productCreateResponse.innerHTML = 'Error creating product: 'hr.statusText;
+                }
+            };
+        });
+
+        const deleteProductForm = document.getElementById('delete-product-form');
+        const deleteProductBtn = document.getElementById('delete-product-btn');
+        const productDeleteResponse = document.getElementById('product-delete-response');
+
+        deleteProductBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent page reload
+
+            if (!<?php echo isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true? 'true' : 'false';?>) {
+                alert("Access denied. You must be logged in to delete a product.");
+                return;
+            }
+
+            const productName = document.getElementById('product_name').value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'delete_product.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(`productName=${productName}`);
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    productDeleteResponse.innerHTML = 'Product deleted successfully!';
+                } else {
+                    productDeleteResponse.innerHTML = 'Error deleting product: 'hr.statusText;
+                }
+            };
+        });
+    </script>
 </body>
 </html>

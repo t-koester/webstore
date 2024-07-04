@@ -13,11 +13,11 @@ if ($conn->connect_error) {
     die("Connection failed: ". $conn->connect_error);
 }
 
-// Get the product name from the URL
-$product_name = $_GET['name'];
+// Get the product ID from the URL
+$product_id = $_GET['id'];
 
 // Query to fetch product information from the database
-$sql = "SELECT * FROM products WHERE Name = '$product_name'";
+$sql = "SELECT * FROM products WHERE ID = '$product_id'";
 $result = $conn->query($sql);
 
 // Check if the product exists
@@ -28,8 +28,6 @@ if ($result->num_rows > 0) {
     $product_description = $row["Desc"];
     $product_price = $row["Price"];
     $product_id = $row["ID"];
-
-
 
 } else {
     echo "<p>Product not found.</p>";

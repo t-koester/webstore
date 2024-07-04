@@ -1,26 +1,41 @@
-<?php include 'head.php'; ?>
-<?php include 'header.php'; ?>
+<?php
+// Configuration for MySQL database
+$db_host = 'localhost';
+$db_username = 'root';
+$db_password = 'root';
+$db_name = 'webshop_project';
 
-<form action="process_order.php" method="post" class="form">
-  <label>Dein Name:</label>
-  <input type="text" name="customer_name" value="<?php echo isset($customer_name) ? $customer_name : ''; ?>" class="form-input"><br>
-  <label>E-mail:</label>
-  <input type="email" required name="email" value="<?php echo isset($email) ? $email : ''; ?>" class="form-input"><br>
-  <label>Handy Number:</label>
-  <input type="text" name="phone_number" value="<?php echo isset($phone_number) ? $phone_number : ''; ?>" class="form-input"><br>
-  <label>Addresse:</label>
-  <textarea name="address" rows="5" cols="40" class="form-input"><?php echo isset($address) ? $address : ''; ?></textarea><br>
-  <label>Produkt:</label>
-  <select name="product" class="form-input">
-    <option value="Product A" <?php if (isset($product) && $product == 'Product A') echo 'selected'; ?>>Product A</option>
-    <option value="Product B" <?php if (isset($product) && $product == 'Product B') echo 'selected'; ?>>Product B</option>
-    <option value="Product C" <?php if (isset($product) && $product == 'Product C') echo 'selected'; ?>>Product C</option>
-  </select><br>
-  <label>Menge:</label>
-  <input type="number" name="quantity" value="<?php echo isset($quantity) ? $quantity : ''; ?>" class="form-input"><br>
-  <label>Sonderwünsche:</label>
-  <textarea name="special_instructions" rows="5" cols="40" class="form-input"><?php echo isset($special_instructions) ? $special_instructions : ''; ?></textarea><br>
-  <input type="submit" value="Place Order" class="form-submit">
-</form>
+// Create a connection to the MySQL database
+$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
 
-<?php include 'footer.php'; ?>
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: ". $conn->connect_error);
+}
+
+// Get the product ID from the URL
+$product_id = $_GET['product_id'];
+
+// Query to fetch product information from the database
+$sql = "SELECT * FROM products WHERE ID = '$product_id'";
+$result = $conn->query($sql);
+
+// Check if the product exists
+if ($result->num_rows > 0) {
+    // Fetch the product information
+    $row = $result->fetch_assoc();
+    $product_name = $row["Name"];
+    $product_price = $row["Price"];
+
+    // Process the order
+    // ...
+
+    echo "<p>Order placed successfully!</p>";
+
+} else {
+    echo "<p>Product not found.</p>";
+}
+
+// Close the MySQL connection
+$conn->close();
+?>

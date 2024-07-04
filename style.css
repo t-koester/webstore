@@ -792,16 +792,15 @@ body {
 }
 
 a {
-  text-decoration: none; /* remove underline */
-  color: inherit; /* inherit the text color from the parent element */
+  text-decoration: none; 
+  color: inherit; 
 }
 
 a:hover {
-  cursor: pointer; /* change the cursor to a pointing hand on hover */
+  cursor: pointer; 
 }
 
 .product {
-  /* Product container styles */
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -810,13 +809,11 @@ a:hover {
 }
 
 .buy-form {
-  /* Form styles */
   display: inline-block;
   margin: 10px;
 }
 
 .buy-button {
-  /* Button styles */
   background-color: #4CAF50;
   color: #fff;
   padding: 10px 20px;
@@ -828,8 +825,6 @@ a:hover {
 .buy-button:hover {
   background-color: #3e8e41;
 }
-
-/* Global styles */
 
 * {
   box-sizing: border-box;
@@ -891,18 +886,17 @@ body {
 }
 
 .productinfo1 {
-  /* ... */
-  margin: 0 auto; /* center the product horizontally */
+  margin: 0 auto; 
 }
 
 .success-message {
-  max-width: 500px; /* adjust the width to your liking */
-  margin: 40px auto; /* add some margin and center the box */
-  padding: 20px; /* add some padding to make the box more readable */
-  border: 1px solid #ddd; /* add a border to make the box more visible */
-  border-radius: 10px; /* add some rounded corners to make the box more visually appealing */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add some subtle shadow to make the box more prominent */
-  background-color: white; /* add a grey background color to the box */
+  max-width: 500px;
+  margin: 40px auto; 
+  padding: 20px; 
+  border: 1px solid #ddd; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  background-color: white; 
 }
 
 .success-header {
@@ -969,14 +963,58 @@ body {
 }
 
 .Product {
-  margin: 20px; /* add some margin around each product box */
-  padding: 20px; /* add some padding inside each product box */
-  border: 1px solid #ddd; /* add a border around each product box */
-  width: 250px; /* set a fixed width for each product box */
-  background-color: #f7f7f7; /* add a light gray background color */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a subtle shadow effect */
+  margin: 20px; 
+  padding: 20px; 
+  border: 1px solid #ddd; 
+  width: 250px; 
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 .Product p {
-  margin-bottom: 10px; /* add some margin between paragraphs */
+  margin-bottom: 10px; 
+}
+
+body.productinfo1 {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.Product {
+  max-width: 900px; 
+  margin: 60px auto; 
+  padding: 50px; 
+  border: 1px solid #ddd;
+  background-color: #f7f7f7; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.Product p {
+  margin-bottom: 30px; 
+  font-size: 22px;
+  line-height: 1.5; 
+}
+
+.Product span {
+  font-weight: bold; 
+  font-size: 24px; 
+}
+
+.button-container1 {
+  text-align: center; 
+  margin-top: 40px;
+}
+
+.button {
+  background-color: #4CAF50; 
+  color: #fff;
+  padding: 15px 30px;
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.button:hover {
+  background-color: #3e8e41; 
 }
