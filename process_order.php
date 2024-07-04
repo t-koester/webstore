@@ -50,17 +50,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Display a success message with order details
 ?>
 <div class='success-message'>
-  <h2 class='success-header'>Order Successful!</h2>
-  <p class='customer-greeting'>Dear <?php echo htmlspecialchars($customer_name); ?>,</p>
-  <p class='order-summary'>Your order has been successfully placed. Please find the details below:</p>
+  <h2 class='success-header'>Bestellung Erfolgreich!</h2>
+  <p class='customer-greeting'>Moin <?php echo htmlspecialchars($customer_name); ?>,</p>
+  <p class='order-summary'>Deine Bestellung ist bei uns eingegangen. Hier sind deine Bestelldetails:</p>
   <ul class='order-details'>
-    <li class='order-number'>Order Number: <?php echo htmlspecialchars($order_number); ?></li>
-    <li class='product'>Product: <?php echo htmlspecialchars($product); ?></li>
-    <li class='quantity'>Quantity: <?php echo htmlspecialchars($quantity); ?></li>
-    <li class='special-instructions'>Special Instructions: <?php echo htmlspecialchars($special_instructions); ?></li>
+    <li class='order-number'Bestellnummer: <?php echo htmlspecialchars($order_number); ?> </li>
+    <li class='product'>Produkt: <?php echo htmlspecialchars($product); ?></li>
+    <li class='quantity'>Menge: <?php echo htmlspecialchars($quantity); ?></li>
+    <li class='special-instructions'>Sonderwünsche: <?php echo htmlspecialchars($special_instructions); ?></li>
   </ul>
-  <p class='payment-instructions'>Please transfer the payment to: DE38500105173193917541 with the reference number: <?php echo htmlspecialchars($order_number); ?></p>
-  <p class='thank-you'>Thank you for your order!</p>
+  <p class='payment-instructions'>Bitte überweise das Geld zu: DE38500105173193917541 mit dem Verwendungszweck: <?php echo htmlspecialchars($order_number); ?></p>
+  <p class='thank-you'>Danke für deine Bestellung!</p>
 </div>
 <?php
 
