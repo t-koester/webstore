@@ -36,6 +36,8 @@ I try to make it for future Project and for Private use.
 - https://pixabay.com/de/photos/schloss-palast-geb%C3%A4ude-architektur-467116/ (Backgrond)
 - https://www.w3schools.com/php/php_form_complete.asp (Form Base)
 - https://dev.mysql.com/ (Database)
+- https://www.w3schools.com/sql/ (DB Snippets)
+- https://stackoverflow.com/ (Best help ever!)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](licence.md) file for details.
@@ -47,5 +49,3 @@ If you use any part of this code, you must give credit to the original author T.
 All images used in this project are sourced from external websites and are available under the links provided. I do not claim any copyright or ownership over these images. They are used solely for testing and demonstration purposes.
 
 If you have any concerns about the usage of any images, please contact me, and I will promptly address the issue.
-
-Test
