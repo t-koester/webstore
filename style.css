@@ -961,3 +961,22 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #fff;
 }
+
+.Products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Product {
+  margin: 20px; /* add some margin around each product box */
+  padding: 20px; /* add some padding inside each product box */
+  border: 1px solid #ddd; /* add a border around each product box */
+  width: 250px; /* set a fixed width for each product box */
+  background-color: #f7f7f7; /* add a light gray background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a subtle shadow effect */
+}
+
+.Product p {
+  margin-bottom: 10px; /* add some margin between paragraphs */
+}

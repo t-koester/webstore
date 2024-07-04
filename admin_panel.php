@@ -74,7 +74,6 @@ if (!isset($logged_in) || !$logged_in) {
             <input type="submit" name="create_product" value="Create Product">
         </form>
 
-        <!-- ... rest of your admin panel code ... -->
 
     </div>
 
