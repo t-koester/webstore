@@ -110,11 +110,6 @@ if (!isset($logged_in) || !$logged_in) {
         createProductBtn.addEventListener('click', (e) => {
             e.preventDefault(); // Prevent page reload
 
-            if (!<?php echo isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true ? 'true' : 'false'; ?>) {
-                alert("Access denied. You must belogged in to create a product.");
-                return;
-            }
-
             const productName = document.getElementById('product_name').value;
             const productDescription = document.getElementById('product_description').value;
             const productPrice = document.getElementById('product_price').value;
@@ -128,7 +123,7 @@ if (!isset($logged_in) || !$logged_in) {
                 if (xhr.status === 200) {
                     productCreateResponse.innerHTML = 'Product created successfully!';
                 } else {
-                    productCreateResponse.innerHTML = 'Error creating product: 'hr.statusText;
+                    productCreateResponse.innerHTML = 'Error creating product: ' xhr.statusText;
                 }
             };
         });
@@ -139,11 +134,6 @@ if (!isset($logged_in) || !$logged_in) {
 
         deleteProductBtn.addEventListener('click', (e) => {
             e.preventDefault(); // Prevent page reload
-
-            if (!<?php echo isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true? 'true' : 'false';?>) {
-                alert("Access denied. You must be logged in to delete a product.");
-                return;
-            }
 
             const productName = document.getElementById('product_name').value;
 
@@ -156,7 +146,7 @@ if (!isset($logged_in) || !$logged_in) {
                 if (xhr.status === 200) {
                     productDeleteResponse.innerHTML = 'Product deleted successfully!';
                 } else {
-                    productDeleteResponse.innerHTML = 'Error deleting product: 'hr.statusText;
+                    productDeleteResponse.innerHTML = 'Error deleting product: ' xhr.statusText;
                 }
             };
         });

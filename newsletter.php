@@ -69,8 +69,8 @@ $mail->isSMTP();
 $mail->Host = 'localhost'; // Mailpit's SMTP server
 $mail->Port = 1025; // Default port for Mailpit
 
-// Enable debug output
-$mail->SMTPDebug = 2; // 0 = off, 1 = client messages, 2 = client and server messages
+// Disable debug output
+$mail->SMTPDebug = 0; 
 
 // Sender settings
 $mail->setFrom('your_email@example.com', 'Your Name');
@@ -80,23 +80,30 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $name = $_POST['name'];
 
-}
- 
     // Validate email address
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo 'Invalid email address';
         exit;
+    }
+
+    // Insert subscriber into database
+    $stmt = $db->prepare('INSERT INTO subscribers (email, name) VALUES (:email, :name)');
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':name', $name);
+    $stmt->execute();
+
     // Send newsletter
-    $subject = 'Newsletter Conformation';
+    $subject = 'Newsletter Confirmation';
     $body = '<h1>Confirm your email by answering to this!</h1>';
+    $recipients = array(array('email' => $email, 'name' => $name));
     sendNewsletter($subject, $body, $recipients);
 }
 
-// Form to collect email addresses
+// Include head and header files
+include 'head.php';
+include 'header.php';
 ?>
 
-<?php include 'head.php' ?>
-<?php include 'header.php' ?>
 <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <label for="email">Email:</label>
     <input type="email" name="email" required><br><br>

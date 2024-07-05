@@ -24,8 +24,12 @@ $product_name = $_POST['productName'];
 $product_description = $_POST['productDescription'];
 $product_price = $_POST['productPrice'];
 
-$sql = "INSERT INTO products (Name, Description, Price) VALUES ('$product_name', '$product_description', '$product_price')";
-if ($conn->query($sql) === TRUE) {
+$sql = "INSERT INTO products (Name, Description, Price) VALUES (?,?,?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sss", $product_name, $product_description, $product_price);
+$stmt->execute();
+
+if ($stmt->affected_rows > 0) {
     echo "New product created successfully!";
 } else {
     echo "Error: ". $sql. "<br>". $conn->error;

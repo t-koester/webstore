@@ -22,8 +22,12 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in']!= true) {
 // Delete a product
 $product_name = $_POST['productName'];
 
-$sql = "DELETE FROM products WHERE Name = '$product_name'";
-if ($conn->query($sql) === TRUE) {
+$sql = "DELETE FROM products WHERE Name =?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $product_name);
+$stmt->execute();
+
+if ($stmt->affected_rows > 0) {
     echo "Product deleted successfully!";
 } else {
     echo "Error: ". $sql. "<br>". $conn->error;
