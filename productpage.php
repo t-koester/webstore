@@ -45,17 +45,17 @@ $conn->close();
     <title>Product Page</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class = productinfo1>
+<body class="productinfo1">
     <?php include 'header.php'?>
 
     <div class="Product">
-        <?php echo $product_name; ?>
-        <?php echo $product_description; ?>
-        <?php echo "Price: $product_price"; ?>
+        <h1><?php echo $product_name;?></h1>
+        <p><?php echo $product_description;?></p>
+        <p>Price: <?php echo $product_price;?></p>
     </div>
 
     <div class="button-container1">
-        <form action="form.php?product_id=<?php echo $product_id; ?>" method="post">
+        <form action="form.php?product_id=<?php echo $product_id;?>" method="post">
             <button class="button" type="submit">Buy Now</button>
         </form>
     </div>
