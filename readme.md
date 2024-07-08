@@ -19,7 +19,7 @@ I try to make it for future Project and for Private use.
 
 ## To Do:
 - Fix the Admin Panel
-- ~~ Add a Payment Method~~ 
+- ~~Add a Payment Method~~ 
 - ~~Fix the Bugs on Display Products~~ 
 - ~~Save Products in the DB and fetch it~~
 - ~~Add a Newsletter Sign Up~~
