@@ -1,15 +1,10 @@
 <?php
-// Check if admin is logged in
-if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-    header('Location: admin_login.php');
-    exit;
-}
 
 // Configuration
 $db_host = 'localhost';
-$db_username = 'your_username';
-$db_password = 'your_password';
-$db_name = 'your_database';
+$db_username = 'root';
+$db_password = 'root';
+$db_name = 'webshop_project';
 
 // Create connection
 $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
@@ -29,7 +24,7 @@ if (isset($_POST['submit'])) {
     // Check if data is valid
     if (!empty($product_name) && !empty($product_description) && !empty($product_price)) {
         // Prepare SQL query
-        $sql = "INSERT INTO products (Name, Description, Price) VALUES (?,?,?)";
+        $sql = "INSERT INTO products (Name, Desc, Price) VALUES (?,?,?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("sss", $product_name, $product_description, $product_price);
 
