@@ -2,19 +2,8 @@
 
 include "./utils/queries.php";
 
-// Database connection settings
-$db_username = 'root';
-$db_password = 'root'; // Replace with your MySQL password
-$db_host = 'localhost';
-$db_name = 'webshop_project'; // Replace with your database name
+include 'connection.php';
 
-// Create a new MySQLi connection
-$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: ". $conn->connect_error);
-}
 
 // Check if admin is logged in / set admin_logged_in
 $admin_logged_in = isset($_SESSION['admin_logged_in']);
