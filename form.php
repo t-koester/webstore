@@ -18,6 +18,11 @@ if (isset($_POST['add_product'])) {
     if (!in_array($product_id, $_SESSION['products'])) {
         $_SESSION['products'][] = $product_id;
     }
+    // Save product quantity in session
+    if (!isset($_SESSION['product_quantities'])) {
+        $_SESSION['product_quantities'] = array();
+    }
+    $_SESSION['product_quantities'][$product_id] = 1;
 }
 
 // Check if the user has submitted the remove product form
@@ -25,8 +30,9 @@ if (isset($_POST['remove_product'])) {
     $product_id = $_POST['remove_product'];
     if (isset($_SESSION['products'])) {
         $key = array_search($product_id, $_SESSION['products']);
-        if ($key !== false) {
+        if ($key!== false) {
             unset($_SESSION['products'][$key]);
+            unset($_SESSION['product_quantities'][$product_id]);
         }
     }
 }
@@ -38,26 +44,9 @@ if (isset($_POST['place_order'])) {
     $phone_number = $_POST['phone_number'];
     $address = $_POST['address'];
 
-    // Insert order into database
-    $sql = "INSERT INTO orders (customer_name, email, phone_number, address) VALUES ('$customer_name', '$email', '$phone_number', '$address')";
-    $conn->query($sql);
-
-    // Get the last inserted order ID
-    $order_id = $conn->insert_id;
-
-    // Insert order products into database
-    if (isset($_SESSION['products'])) {
-        foreach ($_SESSION['products'] as $product_id) {
-            $sql = "INSERT INTO order_products (order_id, product_id) VALUES ('$order_id', '$product_id')";
-            $conn->query($sql);
-        }
-    }
-
-    // Clear the session
-    unset($_SESSION['products']);
-
-    // Display success message
-    echo "<h2>Order placed successfully!</h2>";
+    // Redirect to process_order page
+    header('Location: process_order.php');
+    exit;
 }
 
 ?>
@@ -72,7 +61,7 @@ if (isset($_POST['place_order'])) {
                     $sql = "SELECT * FROM products WHERE ID = '$product_id'";
                     $result = $conn->query($sql);
                     $row = $result->fetch_assoc();
-                   ?>
+                  ?>
                     <li style="padding: 10px; border-bottom: 1px solid #ddd;">
                         <span style="font-size: 14px;"><?php echo $row["Name"];?></span>
                         <span style="font-size: 14px; float: right;"><?php echo $row["Price"];?></span>
@@ -80,6 +69,8 @@ if (isset($_POST['place_order'])) {
                             <input type="hidden" name="remove_product" value="<?php echo $product_id;?>">
                             <button class="button" type="submit" style="padding: 5px 10px; font-size: 12px; background-color: #ff0000; color: #fff;">Remove</button>
                         </form>
+                        <!-- Display product quantity -->
+                        <span style="font-size: 14px; float: right; margin-right: 10px;">Quantity: <?php echo $_SESSION['product_quantities'][$product_id];?></span>
                     </li>
                 <?php endforeach;?>
             </ul>
@@ -96,7 +87,7 @@ if (isset($_POST['place_order'])) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<option value='". $row["ID"]. "'>". $row["Name"]. "</option>";
                 }
-               ?>
+              ?>
             </select>
             <br><br>
             <button class="button" type="submit" style="padding: 10px 20px; font-size: 12px; background-color: #008000; color: #fff;">Add Product</button>
@@ -118,24 +109,6 @@ if (isset($_POST['place_order'])) {
                 <button class="button" type="submit" name="place_order" style="padding: 10px 20px; font-size: 14px; background-color: #008000; color: #fff;">Place Order</button>
             </form>
         <?php endif;?>
-    </div>
-</div>
-    <div style="width: 40%; margin: 20px;">
-        <h2 class="subtitle" style="font-size: 18px;">Select Product:</h2>
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-            <label for="add_product" style="font-size: 14px;">Select Product:</label>
-            <select name="add_product" style="width: 100%; padding: 10px; font-size: 14px;">
-                <?php
-                $sql = "SELECT * FROM products";
-                $result = $conn->query($sql);
-                while ($row = $result->fetch_assoc()) {
-                    echo "<option value='". $row["ID"]. "'>". $row["Name"]. "</option>";
-                }
-               ?>
-            </select>
-            <br><br>
-            <button class="button" type="submit" style="padding: 10px 20px; font-size: 12px; background-color: #008000; color: #fff;">Add Product</button>
-        </form>
     </div>
 </div>
 
