@@ -1,6 +1,9 @@
 This is just a littel Project where i try to build a webstore.
 I try to make it for future Project and for Private use.
 
+## Security
+This Project is 100% Unsecure! Dont use it for real use! 
+
 ## This Code Include right now:
 - JS Costumer Counter (Not working pretty well)
 - Menu to select Sites 
@@ -16,9 +19,10 @@ I try to make it for future Project and for Private use.
 - Auto Select Product in Product Form
 - Auto Fetch Products from the db
 - Auto Fetch Product Info and Display it on the Info Page
+- Working Admin Panel with Create and Delete Product 
 
 ## To Do:
-- Fix the Admin Panel
+- ~~ Fix the Admin Panel~~ 
 - ~~Add a Payment Method~~ 
 - ~~Fix the Bugs on Display Products~~ 
 - ~~Save Products in the DB and fetch it~~
