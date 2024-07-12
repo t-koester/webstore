@@ -1,58 +1,72 @@
 <?php
-// Configuration
-$db_host = 'localhost';
-$db_username = 'root';
-$db_password = 'root';
-$db_name = 'webshop_project';
+// Start the session
+session_start();
 
-// Create connection
-$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
+// Include the database connection file (assuming it's in the same directory)
+require_once 'connection.php';
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Display the form
+if (!isset($_POST['submit'])) {
+   ?>
+    <h1>Delete Product</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+        <label for="productId">Select Product:</label>
+        <select id="productId" name="productId">
+            <?php
+            // Query to get all existing products
+            $stmt = $conn->prepare("SELECT `Id`, `Name` FROM `products`");
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-// Check if form is submitted
-if (isset($_POST['submit'])) {
-    // Get form data
-    if (isset($_POST['productName']) && isset($_POST['productDescription']) && isset($_POST['productPrice'])) {
-        $product_name = $_POST['productName'];
-        $product_description = $_POST['productDescription'];
-        $product_price = $_POST['productPrice'];
-
-        // Check if data is valid
-        if (!empty($product_name) && !empty($product_description) && !empty($product_price)) {
-            // Prepare SQL query
-            $sql = "INSERT INTO products (Name, Description, Price) VALUES (?,?,?)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sss", $product_name, $product_description, $product_price);
-
-            // Execute query
-            if ($stmt->execute()) {
-                echo "New product created successfully!";
+            // Check for errors
+            if ($stmt->errno) {
+                echo "Error: ". $stmt->error;
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                // Populate the dropdown menu with product names
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='". $row['Id']. "'>". $row['Name']. "</option>";
+                }
             }
-        } else {
-            echo "Error: Please fill in all required fields";
-        }
+           ?>
+        </select>
+        <br><br>
+        <input type="submit" name="submit" value="Delete Product">
+    </form>
+    <?php
+} else {
+    // Get the product ID from the POST request
+    $product_id = $conn->real_escape_string($_POST['productId']);
+
+    // Prepare the SQL statement to delete the product
+    $stmt = $conn->prepare("DELETE FROM `products` WHERE `Id` =?");
+
+    // Check for errors
+    if ($stmt === false) {
+        echo "Error: ". $conn->error;
     } else {
-        echo "Error: Missing required fields";
+        // Bind the parameter
+        $stmt->bind_param("i", $product_id);
+
+        // Execute the statement
+        $stmt->execute();
+
+        // Check for errors
+        if ($stmt->errno) {
+            echo "Error: ". $stmt->error;
+        } else {
+            // Check the number of affected rows
+            $affectedRows = $conn->affected_rows;
+
+            if ($affectedRows > 0) {
+                echo "Product deleted successfully";
+            } else {
+                echo "Error: Product not found or deletion failed";
+            }
+        }
     }
+
+    // Close the statement and the connection
+    $stmt->close();
+    $conn->close();
 }
-
-// Close connection
-$conn->close();
 ?>
-
-<!-- HTML form -->
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <label for="productName">Product Name:</label>
-    <input type="text" id="productName" name="productName"><br><br>
-    <label for="productDescription">Product Description:</label>
-    <textarea id="productDescription" name="productDescription"></textarea><br><br>
-    <label for="productPrice">Product Price:</label>
-    <input type="number" id="productPrice" name="productPrice"><br><br>
-    <input type="submit" name="submit" value="Create Product">
-</form>
