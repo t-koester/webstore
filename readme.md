@@ -1,6 +1,12 @@
 This is just a littel Project where i try to build a webstore.
 I try to make it for future Project and for Private use.
 
+## Update 
+I stop working on this for the first! It was pretty fun and i learned much stuff from this!
+Probably i use this in the future for some new projects or smth but im not sure about it.
+In case you want to use this (what i dont really understand) go for it, check the licence and start!
+If you want to contact me or have questions hit me up on Telegram: @just_tammo! 
+
 ## Security
 This Project is 100% Unsecure! Dont use it for real use! 
 
@@ -38,11 +44,12 @@ This Project is 100% Unsecure! Dont use it for real use!
 - https://seetruetechnology.com/product/simple-placeholder-product-3/ (Product Placeholder)
 - https://www.freepik.com/premium-vector/logo-lorem-ipsum-slogan-design-art-template_28405409.htm (Logo)
 - https://ibb.co/ (Host images)
-- https://pixabay.com/de/photos/schloss-palast-geb%C3%A4ude-architektur-467116/ (Backgrond)
+- https://pixabay.com/de/photos/schloss-palast-geb%C3%A4ude-architektur-467116/ (Background)
 - https://www.w3schools.com/php/php_form_complete.asp (Form Base)
 - https://dev.mysql.com/ (Database)
 - https://www.w3schools.com/sql/ (DB Snippets)
 - https://stackoverflow.com/ (Best help ever!)
+- https://codeshack.io/secure-login-system-php-mysql/ (Login Mechanism)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](licence.md) file for details.
