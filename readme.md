@@ -22,7 +22,7 @@ This Project is 100% Unsecure! Dont use it for real use!
 - Working Admin Panel with Create and Delete Product 
 
 ## To Do:
-- ~~ Fix the Admin Panel~~ 
+- ~~Fix the Admin Panel~~ 
 - ~~Add a Payment Method~~ 
 - ~~Fix the Bugs on Display Products~~ 
 - ~~Save Products in the DB and fetch it~~
